@@ -1,19 +1,55 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    align-content: center;
+    text-align: center;
     min-height: 100vh;
+    margin: 0px;
+    background: url(../images/wallpaper.png);
+}
 
+header {
+    background-color: #1D8A4B;
+    height: 50px;
+    font-size: 120%;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+#time-div {
+    height: 30px;
+    vertical-align: middle;
+    padding-top: 10px;
+}
+
+#time-div span {
+    padding: 0px 20px 0px;
+    font-size: 120%;
+}
+
+button {
+    margin-bottom: 15px;
+    width: 100px;
+    font-size: 120%;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #1D8A4B;
+    border-radius: 5px;
 }
 
 
 
 .game-wrapper {
     width: 500px;
-    height: 700px;
+    height: 620px;
     background-color: #1D8A4B;
     border-radius: 5px;
+    margin: auto;
+    margin-bottom: 70px;
 
 }
 
@@ -38,7 +74,7 @@ body {
 
 .card-back img,
 .card-front img {
-    width: 100px;
+    max-width: 100px;
     max-height: 142px;
     border-radius: 5px;
 
@@ -71,4 +107,49 @@ body {
 
 .card:hover .card-back {
     transform: rotateY(180deg)
+}
+
+footer {
+    background-color: #1D8A4B;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer span,
+a {
+    padding: 0px 20px 0px;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: white;
+}
+
+@media screen and (max-width: 500px) {
+    .game-wrapper {
+        width: 300px;
+        height: 400px;
+    }
+
+    .card-back img,
+    .card-front img {
+        max-width: 60px;
+        max-height: 85x;
+        border-radius: 5px;
+
+    }
+
+    footer span,
+    a {
+        padding: 0px 5px 0px;
+        font-size: 80%;
+    }
 }
