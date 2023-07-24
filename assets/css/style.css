@@ -29,24 +29,46 @@ body {
 
 .cards,
 .card,
-.card-back,
-.card-front {
+.look {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .card-back img,
 .card-front img {
-    max-width: 100px;
+    width: 100px;
     max-height: 142px;
+    border-radius: 5px;
+
 }
 
 .cards .card {
 
     width: 25%;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
 }
 
-.card .card-back {
-    display: none;
+.cards .card .look {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 0.25s linear;
+    backface-visibility: hidden;
+}
+
+.card .card-front {
+    transform: rotateY(-180deg)
+}
+
+.card:hover .card-front {
+    transform: rotateY(0)
+}
+
+.card:hover .card-back {
+    transform: rotateY(180deg)
 }
