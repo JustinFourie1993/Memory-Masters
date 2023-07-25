@@ -85,26 +85,29 @@ button:hover {
     position: relative;
     transform-style: preserve-3d;
     perspective: 1000px;
-
+    height: 25%;
 }
 
 .cards .card .look {
     width: 100%;
     height: 100%;
+    pointer-events: none;
+    user-select: none;
     position: absolute;
     transition: transform 0.25s linear;
     backface-visibility: hidden;
+
 }
 
 .card .card-front {
     transform: rotateY(-180deg)
 }
 
-.card:hover .card-front {
+.card.turn .card-front {
     transform: rotateY(0)
 }
 
-.card:hover .card-back {
+.card.turn .card-back {
     transform: rotateY(180deg)
 }
 

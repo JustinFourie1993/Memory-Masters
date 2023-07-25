@@ -4,7 +4,23 @@ for (card in cards) {
     addEventListener("click", turnCard);
 }
 
+let cardOne, cardTwo;
+
 function turnCard(e) {
-    console.log(e.target);
+    let clickedCard = e.target;
+    if (clickedCard !== cardOne) {
+        clickedCard.classList.add("turn");
+        if (!cardOne) {
+            return cardOne = clickedCard;
+        }
+        cardTwo = clickedCard;
+        console.log(cardOne, cardTwo);
+    }
 }
+
+
+
+
+
+
 
