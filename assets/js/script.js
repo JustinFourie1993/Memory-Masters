@@ -47,20 +47,23 @@ function matchCards(img1, img2) {
 function shuffleDeck() {
     matchedCards = 0;
     cardOne = cardTwo = "";
-    String allCards[] = {}
     let myArray = ['ace-spades', 'king-spades', 'queen-spades', 'jack-spades', 'ace-hearts', 'king-hearts', 'queen-hearts', 'jack-hearts',
-     'ace-spades', 'king-spades', 'queen-spades', 'jack-spades', 'ace-hearts', 'king-hearts', 'queen-hearts', 'jack-hearts'];
-   
+        'ace-spades', 'king-spades', 'queen-spades', 'jack-spades', 'ace-hearts', 'king-hearts', 'queen-hearts', 'jack-hearts'];
+    myArray.sort(() => Math.random() > 0.5 ? 1 : -1);
 
-    cards.forEach(card => {
-        let imgTag = card.querySelector(".pic")
-        imgTag.src = `images`
+
+
+    cards.forEach((card, index) => {
         card.classList.remove("turn");
+        let imgTag = card.querySelector(".pic");
+        imgTag.src = `assets/images/${myArray[index]}.png`;
         card.addEventListener("click", turnCard);
     });
 
 
 }
+
+shuffleDeck();
 
 
 cards.forEach(card => {
