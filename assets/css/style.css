@@ -135,7 +135,7 @@ a:hover {
     }
 }
 
-@media screen and (max-width: 4000px) {
+@media screen and (max-width: 400px) {
 
     .game-wrapper {
         margin-top: 10px;
