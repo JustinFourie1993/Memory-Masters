@@ -134,3 +134,10 @@ a:hover {
         font-size: 80%;
     }
 }
+
+@media screen and (max-width: 350px) {
+
+    .game-wrapper {
+        margin-top: 10px;
+    }
+}
