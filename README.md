@@ -49,4 +49,12 @@ I have tested the site both locally and after deployment, checking that links wo
   * Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
 Live link - [Royal Match](https://justinfourie1993.github.io/Royal-Match/)
+
+# Credits
+
+## Content
+ Instructions on how to implement the necessary functions for the game to work were taken from [This youtube tutorial](https://www.youtube.com/watch?v=DABkhfsBAWw&t=1553s).
+
+ ## Media
+ * All the card pictures are taken from [Dreamtime](https://www.dreamstime.com/).
   
