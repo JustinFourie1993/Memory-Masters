@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll(".card");
+let cards = document.querySelectorAll(".card");
 
 let matchedCards = 0;
 let cardOne, cardTwo;
@@ -26,7 +26,7 @@ function matchCards(img1, img2) {
         if (matchedCards == 8) {
             setTimeout(() => {
                 return shuffleDeck();
-            }, 1000);
+            }, 3000);
 
         }
         cardOne.removeEventListener("click", turnCard);
@@ -45,11 +45,12 @@ function matchCards(img1, img2) {
 }
 
 function shuffleDeck() {
+    disableDeck = false;
     matchedCards = 0;
     cardOne = cardTwo = "";
     let myArray = ['ace-spades', 'king-spades', 'queen-spades', 'jack-spades', 'ace-hearts', 'king-hearts', 'queen-hearts', 'jack-hearts',
         'ace-spades', 'king-spades', 'queen-spades', 'jack-spades', 'ace-hearts', 'king-hearts', 'queen-hearts', 'jack-hearts'];
-    myArray.sort(() => Math.random() > 0.5 ? 1 : -1);
+    myArray.sort(() => Math.random() - 0.5);
 
 
 
@@ -65,11 +66,10 @@ function shuffleDeck() {
 
 shuffleDeck();
 
-
 cards.forEach(card => {
-    card.classList.add("turn");
     card.addEventListener("click", turnCard);
 });
+
 
 
 
