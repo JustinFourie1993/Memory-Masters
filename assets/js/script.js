@@ -1,14 +1,18 @@
-let cards = document.querySelectorAll(".card");   //getting all cards wich class "card".
+let cards = document.querySelectorAll(".card");   
+
 
 let matchedCards = 0;
 let cardOne, cardTwo;
 let disableDeck = false;
 
-cards.forEach(card => {  //Loop to add event listeners to cards, when clicked, call funtion turnCard() to flip card.
+//Loop to add event listeners to cards, when clicked, call funtion turnCard() 
+cards.forEach(card => {  
+
     card.addEventListener("click", turnCard);
 });
 
 //function to turn over card that is clicked by adding "turn" class.
+// code taken from https://www.youtube.com/watch?v=DABkhfsBAWw&t=1553s
 function turnCard(e) {
     let clickedCard = e.target;
     if (clickedCard !== cardOne && !disableDeck) {
@@ -26,6 +30,7 @@ function turnCard(e) {
 }
 
 //Function to check if cards match.
+// code taken from https://www.youtube.com/watch?v=DABkhfsBAWw&t=1553s
 function matchCards(img1, img2) {
     if (img1 === img2) {
         matchedCards++;
@@ -42,6 +47,7 @@ function matchCards(img1, img2) {
     }
 
     //Funtion to remove turn class if cards not matched (they flip back).
+    // code taken from https://www.youtube.com/watch?v=DABkhfsBAWw&t=1553s
     setTimeout(() => {
         cardOne.classList.remove("turn");
         cardTwo.classList.remove("turn");
@@ -52,6 +58,7 @@ function matchCards(img1, img2) {
 }
 
 //Function to randomize card placement and flip cards back over
+// code taken from https://www.youtube.com/watch?v=DABkhfsBAWw&t=1553s
 function shuffleDeck() {
     disableDeck = false;
     matchedCards = 0;
