@@ -13,18 +13,19 @@
     <header>
         <h1>Royal Match</h1>
     </header>
-    
+
     <!-- Introduction Modal -->
-    <div id="intro-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Welcome to Royal Match</h2>
-            <p>Test your memory by matching pairs of cards with the same images.
-                 Flip a card to reveal its image and try to
-                find its match.</p>
-            <p>Click on the cards to flip them. 
-                Match all the cards to win the game!</p>
-            <button id="start-game-button">Start Game</button>
+    <div class="modal-wrapper">
+        <div id="intro-modal" class="modal modal-container">
+            <div class="modal-content">
+                <h2>Welcome to Royal Match</h2>
+                <p>Test your memory by matching pairs of cards with the same images.
+                    Flip a card to reveal its image and try to
+                    find its match.</p>
+                <p>Click on the cards to flip them.
+                    Match all the cards to win the game!</p>
+                <button id="start-game-button">Start Game</button>
+            </div>
         </div>
     </div>
 
@@ -170,13 +171,14 @@
         <button class="reset-button">Reset</button>
     </div>
 
-    <div id="win-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Congratulations!</h2>
-            <p>You've matched all the cards!</p>
-            <p>Your time: <span id="final-time">0s</span></p>
-            <p>Your moves: <span id="final-moves">0</span></p>
+    <div class="modal-wrapper">
+        <div id="win-modal" class="modal modal-container">
+            <div class="modal-content">
+                <h2>Congratulations!</h2>
+                <p>You've matched all the cards!</p>
+                <p>Your time: <span id="final-time">0s</span></p>
+                <p>Your moves: <span id="final-moves">0</span></p>
+            </div>
         </div>
     </div>
 

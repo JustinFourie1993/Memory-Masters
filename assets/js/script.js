@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const introModal = document.getElementById("intro-modal");
     const startGameButton = document.getElementById("start-game-button");
 
-    // Show the introduction modal when the page loads
-    introModal.style.display = "block";
 
     // Close the introduction modal and start the game when the "Start Game" button is clicked
     startGameButton.addEventListener("click", function () {
@@ -11,11 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
         startGame();
     });
 
-    // Close the introduction modal when the close button (X) is clicked
-    const closeButton = introModal.querySelector(".close");
-    closeButton.addEventListener("click", function () {
-        introModal.style.display = "none";
-    });
 });
 
 function startGame() {
