@@ -13,6 +13,7 @@
     <header>
         <h1>Royal Match</h1>
     </header>
+    
     <!-- Introduction Modal -->
     <div id="intro-modal" class="modal">
         <div class="modal-content">
@@ -26,6 +27,7 @@
             <button id="start-game-button">Start Game</button>
         </div>
     </div>
+
     <div class="game-wrapper">
         <!--<ul> structure taken from tutorial 
             https://www.youtube.com/watch?v=DABkhfsBAWw&t=1553s-->
@@ -161,10 +163,21 @@
             </li>
         </ul>
     </div>
+
     <div class="score-panel">
         <span class="moves">Moves: 0</span>
         <span class="timer">Time: 0s</span>
         <button class="reset-button">Reset</button>
+    </div>
+
+    <div id="win-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Congratulations!</h2>
+            <p>You've matched all the cards!</p>
+            <p>Your time: <span id="final-time">0s</span></p>
+            <p>Your moves: <span id="final-moves">0</span></p>
+        </div>
     </div>
 
     <footer>
