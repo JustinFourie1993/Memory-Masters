@@ -17,6 +17,14 @@ function startGame() {
     let matchedCards = 0;
     let cardOne, cardTwo;
     let disableDeck = false;
+    let moves = 0;
+
+    const movesDisplay = document.querySelector(".moves");
+
+    function incrementMoves() {
+        moves++;
+        movesDisplay.textContent = `Moves: ${moves}`;
+    }
 
     //Loop to add event listeners to cards, when clicked, call funtion turnCard() 
     cards.forEach(card => {
@@ -30,6 +38,7 @@ function startGame() {
         let clickedCard = e.target;
         if (clickedCard !== cardOne && !disableDeck) {
             clickedCard.classList.add("turn");
+            incrementMoves();
             if (!cardOne) {
                 return cardOne = clickedCard;
             }
