@@ -35,7 +35,11 @@ function startGame() {
             timerDisplay.textContent = `Time: ${seconds}s`;
         }, 1000);}
 
-    
+    startTimer();
+
+    function stopTimer() {
+        clearInterval(timerInterval);
+    }
 
     //Loop to add event listeners to cards, when clicked, call funtion turnCard() 
     cards.forEach(card => {
@@ -67,17 +71,14 @@ function startGame() {
     function matchCards(img1, img2) {
         if (img1 === img2) {
             matchedCards++;
-            if (matchedCards == 8) {   //Once all cards are matched, the deck is shuffled after 2 sec.
-                setTimeout(() => {
-                    return shuffleDeck();
-                }, 2000);
-
+            if (matchedCards == 8) {  
+                stopTimer()
             }
             cardOne.removeEventListener("click", turnCard); //Removes click to turn so matched cards stay face up.
             cardTwo.removeEventListener("click", turnCard);
             cardOne = cardTwo = "";    //Sets value to blank.
             return disableDeck = false;
-        }
+        }else{}
 
         //Funtion to remove turn class if cards not matched (they flip back).
         // code taken from https://www.youtube.com/watch?v=DABkhfsBAWw&t=1553s
@@ -86,7 +87,7 @@ function startGame() {
             cardTwo.classList.remove("turn");
             cardOne = cardTwo = "";
             disableDeck = false;
-        }, 1000);
+        }, 1000);}
 
     }
 
@@ -109,10 +110,10 @@ function startGame() {
             card.addEventListener("click", turnCard);   //Reasigns event listener to turn cards if clicked.
         });
 
-        startTimer()
         
-    }
+        
+    };
 
     shuffleDeck();  //Deck is shuffled when page loads
 
-}
+};
