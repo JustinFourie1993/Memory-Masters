@@ -20,9 +20,14 @@ function startGame() {
     let moves = 0;
     let timerInterval;
     let seconds = 0;
+    let isGameWon = false;
 
     const movesDisplay = document.querySelector(".moves");
     const timerDisplay = document.querySelector(".timer");
+    const resetButton = document.querySelector(".reset-button");
+    const winModal = document.getElementById("win-modal");
+    const finalTime = document.getElementById("final-time");
+    const finalMoves = document.getElementById("final-moves");
 
     function incrementMoves() {
         moves++;
@@ -33,12 +38,18 @@ function startGame() {
         timerInterval = setInterval(() => {
             seconds++;
             timerDisplay.textContent = `Time: ${seconds}s`;
-        }, 1000);}
+        }, 1000);
+    }
 
     startTimer();
 
     function stopTimer() {
         clearInterval(timerInterval);
+    }
+
+    function showWinModal() {
+        finalTime.textContent = `${seconds}s`;
+        finalMoves.textContent = moves;
     }
 
     //Loop to add event listeners to cards, when clicked, call funtion turnCard() 
@@ -110,7 +121,7 @@ function startGame() {
             card.addEventListener("click", turnCard);   //Reasigns event listener to turn cards if clicked.
         });
 
-        
+     
         
     };
 
