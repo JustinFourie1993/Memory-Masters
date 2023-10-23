@@ -18,13 +18,24 @@ function startGame() {
     let cardOne, cardTwo;
     let disableDeck = false;
     let moves = 0;
+    let timerInterval;
+    let seconds = 0;
 
     const movesDisplay = document.querySelector(".moves");
+    const timerDisplay = document.querySelector(".timer");
 
     function incrementMoves() {
         moves++;
         movesDisplay.textContent = `Moves: ${moves}`;
     }
+
+    function startTimer() {
+        timerInterval = setInterval(() => {
+            seconds++;
+            timerDisplay.textContent = `Time: ${seconds}s`;
+        }, 1000);}
+
+    
 
     //Loop to add event listeners to cards, when clicked, call funtion turnCard() 
     cards.forEach(card => {
@@ -97,16 +108,11 @@ function startGame() {
             imgTag.src = `assets/images/${myArray[index]}.png`; //Assigns each cards img from the randomly sorted array.
             card.addEventListener("click", turnCard);   //Reasigns event listener to turn cards if clicked.
         });
+
+        startTimer()
+        
     }
 
     shuffleDeck();  //Deck is shuffled when page loads
 
 }
-
-
-
-
-
-
-
-
