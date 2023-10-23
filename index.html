@@ -29,6 +29,18 @@
         </div>
     </div>
 
+    <!-- Game won modal -->
+    <div class="modal-wrapper">
+        <div id="win-modal" class="modal modal-container" style="display: none;">
+            <div class="modal-content">
+                <h2>Congratulations!</h2>
+                <p>You've matched all the cards!</p>
+                <p>Your time: <span id="final-time">0s</span></p>
+                <p>Your moves: <span id="final-moves">0</span></p>
+            </div>
+        </div>
+    </div>
+
     <div class="game-wrapper">
         <!--<ul> structure taken from tutorial 
             https://www.youtube.com/watch?v=DABkhfsBAWw&t=1553s-->
@@ -164,25 +176,18 @@
             </li>
         </ul>
     </div>
-
+    
+    <!-- Shows score and time -->
     <div class="score-panel">
         <span class="moves">Moves: 0</span>
         <span class="timer">Time: 0s</span>
         <button class="reset-button">Reset</button>
     </div>
 
-    <div class="modal-wrapper">
-        <div id="win-modal" class="modal modal-container">
-            <div class="modal-content">
-                <h2>Congratulations!</h2>
-                <p>You've matched all the cards!</p>
-                <p>Your time: <span id="final-time">0s</span></p>
-                <p>Your moves: <span id="final-moves">0</span></p>
-            </div>
-        </div>
-    </div>
-
-    
+    <!-- Audio elements for sound effects -->
+    <audio id="flip-sound" src="assets/sounds/flip.mp4"></audio>
+    <audio id="match-sound" src="assets/sounds/matched.mp4"></audio>
+    <audio id="win-sound" src="assets/sounds/win.mp4"></audio>
 
     <footer>
         <span>Invite your friends</span>

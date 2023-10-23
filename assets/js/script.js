@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const introModal = document.getElementById("intro-modal");
     const startGameButton = document.getElementById("start-game-button");
-    const winModal = document.getElementById("win-modal");
-    winModal.style.display = "none";
 
     // Close the introduction modal and start the game when the "Start Game" 
     // button is clicked
@@ -27,9 +25,12 @@ function startGame() {
     const movesDisplay = document.querySelector(".moves");
     const timerDisplay = document.querySelector(".timer");
     const resetButton = document.querySelector(".reset-button");
-    const winModal = document.getElementById("win-modal");
     const finalTime = document.getElementById("final-time");
     const finalMoves = document.getElementById("final-moves");
+    const winModal = document.getElementById("win-modal");
+    const flipSound = document.getElementById("flip-sound");
+    const matchSound = document.getElementById("match-sound");
+    const winSound = document.getElementById("win-sound");
 
     // displays ammount of moves
     function incrementMoves() {
@@ -66,6 +67,7 @@ function startGame() {
         finalTime.textContent = `${seconds}s`;
         finalMoves.textContent = moves;
         winModal.style.display = "block";
+        winSound.play();
     }
 
     // resets timer, moves, shuffles the deck and hides win modal
@@ -89,6 +91,7 @@ function startGame() {
     function turnCard(e) {
         let clickedCard = e.target;
         if (clickedCard !== cardOne && !disableDeck) {
+            flipSound.play();
             clickedCard.classList.add("turn");
             incrementMoves();
             if (!cardOne) {
@@ -109,7 +112,10 @@ function startGame() {
     // has flipped them over.  And check if game is won
     function matchCards(img1, img2) {
         if (img1 === img2) {
-            matchedCards++;
+            matchedCards++; 
+            setTimeout(() => {
+                matchSound.play();
+            }, 1000);
             cardOne.removeEventListener("click", turnCard);
             cardTwo.removeEventListener("click", turnCard);
             cardOne = cardTwo = "";
