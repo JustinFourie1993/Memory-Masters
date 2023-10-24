@@ -1,3 +1,4 @@
+// When page loads variables are assigned and eventlistener add
 document.addEventListener("DOMContentLoaded", function () {
     const introModal = document.getElementById("intro-modal");
     const startGameButton = document.getElementById("start-game-button");
@@ -20,7 +21,6 @@ function startGame() {
     let moves = 0;
     let timerInterval;
     let seconds = 0;
-
 
     const movesDisplay = document.querySelector(".moves");
     const timerDisplay = document.querySelector(".timer");
@@ -112,7 +112,7 @@ function startGame() {
     // has flipped them over.  And check if game is won
     function matchCards(img1, img2) {
         if (img1 === img2) {
-            matchedCards++; 
+            matchedCards++;
             setTimeout(() => {
                 matchSound.play();
             }, 1000);
@@ -139,8 +139,11 @@ function startGame() {
         disableDeck = false;
         matchedCards = 0;
         cardOne = cardTwo = "";
-        let myArray = ['ace-spades', 'king-spades', 'queen-spades', 'jack-spades', 'ace-hearts', 'king-hearts', 'queen-hearts', 'jack-hearts',
-            'ace-spades', 'king-spades', 'queen-spades', 'jack-spades', 'ace-hearts', 'king-hearts', 'queen-hearts', 'jack-hearts'];
+        let myArray = ['ace-spades', 'king-spades', 'queen-spades',
+        'jack-spades', 'ace-hearts', 'king-hearts', 'queen-hearts',
+        'jack-hearts', 'ace-spades', 'king-spades', 'queen-spades',
+        'jack-spades', 'ace-hearts', 'king-hearts', 'queen-hearts',
+        'jack-hearts'];
         myArray.sort(() => Math.random() - 0.5);
 
         cards.forEach((card, index) => {

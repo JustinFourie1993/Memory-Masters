@@ -5,6 +5,13 @@ Royal Match is a simple, yet fun memory game. In this game, you flip over cards 
 
 # Features
 
+## Intoduction modal
+
+* A message appears when the page loads describing how the game is played
+* The button starts the game and hides the modal
+
+![Screenshot of game](assets/readme-images/intro-modal.png)
+
 ## The game
 
 * The game is the main function of the page. 
@@ -12,19 +19,38 @@ Royal Match is a simple, yet fun memory game. In this game, you flip over cards 
   
 ![Screenshot of game](assets/readme-images/game.png)
 
+## Time/Score tracker
+
+* A log that displays the ammount of time played, and moves made.
+* A reset button to restart the game
+  
+![Screenshot of game](assets/readme-images/time-log.png)
+
+## Win modal
+
+* A meesage appears congradulating you when you have won the game.
+* It displays your final game time and moves
+
+  
+![Screenshot of game](assets/readme-images/win-modal.png)
+
 ## The footer
 
 * The footer provides links to social media to invite friends to play
 
 ![Screenshot of footer](assets/readme-images/footer.png)
 
-### Features left to implemet
-
-* A timer to track how fast u can solve the game
-* A link to social media to share your time
 
 # Testing
-I have tested the site both locally and after deployment, checking that links work, all interactivity is working, and that the website is responsive over multiple screen sizes.
+* I have tested the site both locally and after deployment.
+* Clicking on links, they opened up in new tabs as expected.
+* I clicked on buttons that start/reset the game and they did.
+* I played the game multiple times and the game worked as expected.
+* All cards flip over with animation sounds.
+* When cards are matched they stay face up.
+* When all cards are matched the game stops and the user is congradulated with thier final score.
+* When the game is reset, it all starts over, the deck is shuffled and all the cards are in new random places.
+* I inspected the site on defferent screen sizes and the site is responsive
 
 ## Validator Testing
 
@@ -41,6 +67,21 @@ I have tested the site both locally and after deployment, checking that links wo
   
 ![](assets/readme-images/lighthouse-score.png)
 
+# Planning
+My goal during this project was to make a game that was simple and fun to play, visually pleasing, and gives the user a nostalgic feeling, at least for those of us born before the invention of the internet.
+
+## User Stories
+
+* As a user i can see a discription of the game when the page is loaded so that i know how to play.
+* As a user i can click on cards to turn them over so that i can see what card it is.
+* As a user i can click on a button that starts the game so i can choose when to start.
+* As a user i can view a tracker that keeps time and moves played so that i can improve my score.
+* As a user i can click on social media links so that i can tell people about my score.
+* As a user i can play and view the game easily on multiple devices
+  
+## Design
+For the games design, as it is a card game using a classic deck of cards, i wanted to give it a classic look. I chose to go with the red and green that we all remember from games like poker, or solitair. The classic red back contrasts well on the green background, almost as if they are lying on a poker table with green feldt. I chose a simple font "Arial", as i wanted the website to be clean and sleek, so that nothing is a distraction from the game itself. The game is centered on the page so it it easy to focus on, and the dropback is a light floral pattern wich is quietly pleasing without drawing away attention from the game itself.
+
 # Deployment
 
 * The site was deployed to GitHub pages. The steps to deploy are as follows:
@@ -53,8 +94,9 @@ Live link - [Royal Match](https://justinfourie1993.github.io/Royal-Match/)
 # Credits
 
 ## Content
- Instructions on how to implement the necessary functions for the game to work were taken from [This youtube tutorial](https://www.youtube.com/watch?v=DABkhfsBAWw&t=1553s).
+ Some of the html, css and javascript are taken from [This youtube tutorial](https://www.youtube.com/watch?v=DABkhfsBAWw&t=1553s). They are credited in the code.
 
  ## Media
  * All the card pictures are taken from [Dreamtime](https://www.dreamstime.com/).
+* All animation sounds are taken from [Pixabay](https://pixabay.com/sound-effects/search/animation/).
   
